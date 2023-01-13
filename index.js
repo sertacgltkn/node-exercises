@@ -1,21 +1,31 @@
 // console.log("merhaba")
 
 var http = require("http"); // import http from "http";
+var fs = require("fs");
 
 var server = http.createServer((req, res) => {
-    console.log(req.url)
+  console.log(req.url);
 
-    if(req.url == "/") {
-        res.write("<h1>Home</h1>")
-    } else if(req.url == "/products") {
-        res.write("<h1>Products</h1>")
-    } else {
-        res.write("<h1>404</h1>")
-    }
+  if (req.url == "/") {
+    fs.readFile("index.html", (err, html) => {
+      res.write(html);
+      res.end();
+    });
+  } else if (req.url == "/products") {
+    fs.readFile("products.html", (err, html) => {
+      res.write(html);
+      res.end();
+    });
+  } else {
+    fs.readFile("404.html", (err, html) => {
+      res.write(html);
+      res.end();
+    });
+  }
 
-    res.end();
-})
+  res.end();
+});
 
 server.listen(3000, () => {
-    console.log("server is running at port 3000")
+  console.log("server is running at port 3000");
 });
