@@ -1,31 +1,20 @@
-// console.log("merhaba")
+const express = require ("express")
+const app = express()
 
-var http = require("http"); // import http from "http";
-var fs = require("fs");
+app.use("/products/:id", function(req, res) {
+  res.send("Product details " + req.params.id)
+})
 
-var server = http.createServer((req, res) => {
-  console.log(req.url);
+app.use("/products", function(req, res) {
+  res.send("Products")
+})
 
-  if (req.url == "/") {
-    fs.readFile("index.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  } else if (req.url == "/products") {
-    fs.readFile("products.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  } else {
-    fs.readFile("404.html", (err, html) => {
-      res.write(html);
-      res.end();
-    });
-  }
+app.use("/", function(req, res) {
+  res.send("Home")
+})
 
-  res.end();
-});
 
-server.listen(4000, () => {
-  console.log("server is running at port 4000");
-});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000")
+})
