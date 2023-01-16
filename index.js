@@ -1,16 +1,18 @@
 const express = require ("express")
 const app = express()
 
+app.set("view engine","ejs")
+
 app.use("/products/:id", function(req, res) {
-  res.send("Product details " + req.params.id)
+  res.render("product-details")
 })
 
 app.use("/products", function(req, res) {
-  res.send("Products")
+  res.render("Products")
 })
 
 app.use("/", function(req, res) {
-  res.send("Home")
+  res.render("index")
 })
 
 
