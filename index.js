@@ -4,9 +4,9 @@ const app = express()
 app.set("view engine","ejs")
 
 const products = [
-  {id: 1, name: "iphone 14", price: 30000},
-  {id: 2, name: "iphone 15", price: 40000},
-  {id: 3, name: "iphone 16", price: 50000}
+  {id: 1, name: "iphone 14", price: 30000, isActive: true },
+  {id: 2, name: "iphone 15", price: 40000, isActive: false },
+  {id: 3, name: "iphone 16", price: 50000, isActive: true }
 ]
 
 app.use("/products/:id", function(req, res) {
