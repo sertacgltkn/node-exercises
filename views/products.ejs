@@ -13,15 +13,14 @@
     <p><%= products[0].price %></p>
 
     <ul>
-        <% products.forEach(products => { %>
-          <% if (products.price >= 40000 && products.isActive ) { %>
-           
-          <% } %>
-         <li>
-            <%= products.name %> - <%= products.price %>  
-         </li>
-        <% }) %>
-        
+      <% products.forEach(products => { %> <% if (products.price >= 40000 &&
+      products.isActive ) { %> <% } %>
+      <li>
+        <a href="/products/<%= products.id %>">
+          <%= products.name %> - <%= products.price %>
+        </a>
+      </li>
+      <% }) %>
     </ul>
   </body>
 </html>
