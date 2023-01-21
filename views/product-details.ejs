@@ -7,6 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Products Detail</h1>
+    <h1>
+        <%= name %>
+        <p>
+            <%= price %>
+        </p>
+        <p>
+            <%= if (isActive) {
+                <span>
+                    active
+                    </span>
+                    
+            } %>
+        </p>
+    </h1>
 </body>
 </html>
