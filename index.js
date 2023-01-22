@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 
 app.set("view engine", "ejs");
+app.use(express.static('public'))
+
 
 const products = [
-  { id: 1, name: "iphone 14", price: 30000, isActive: true },
+  { id: 1, name: "iphone 14", price: 30000, isActive: true, imageUrl: "black-and-white-1282260_960_720.jpg"},
   { id: 2, name: "iphone 15", price: 40000, isActive: false },
   { id: 3, name: "iphone 16", price: 50000, isActive: true },
 ];
