@@ -20,7 +20,12 @@
               </div>
               <div class="col-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%= products.name %> </h5>
+                  <h5 class="card-title">
+                    <a href="/products/<% products.id %> ">
+                    <% products.name %> 
+                    </a>
+                    <%= products.name %> 
+                  </h5>
                   <p class="card-text"><%= products.price %> </p>
                 </div>
               </div>

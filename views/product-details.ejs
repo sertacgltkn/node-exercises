@@ -4,24 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/public/css/styles.css" />
     <title>Document</title>
   </head>
-  <body class="bg-warning">
-    <h1>
-         <%= name %>
-        </h1>
-        <img src="/images/black-and-white-1282260_960_720.jpg" alt="black">
-        <p><%= price %></p>
-        <p>
-             <%= if (isActive) {
-        <span> active </span>
-
-        } 
-        %>
-
-      </p>
-    
+  <body>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col12">
+          <div class="card mb-3">
+            <div class="row">
+              <div class="col-4">
+                <img src="/images/<%= imageUrl %>" alt="" class="img-fluid" />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= name %></h5>
+                  <p class="card-text"><%= price %></p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Numquam nemo dicta, fuga doloremque dolore itaque
+                    repudiandae aperiam corrupti minima esse maiores voluptatum
+                    asperiores in labore, iure mollitia quisquam totam illo.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Corrupti, accusamus, veniam voluptatum facilis architecto
+                    placeat laudantium dolorem eligendi praesentium, delectus
+                    doloremque. Nobis iusto deserunt debitis consequatur quod
+                    assumenda rem blanditiis.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
